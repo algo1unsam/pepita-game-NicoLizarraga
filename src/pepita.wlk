@@ -34,8 +34,8 @@ object alguien{
 	var comidaActual = null
 	method imagen() = "jugador.png"
 	method encontraste(comida){
-		comidaActual = comida
-		game.removeVisual(comida)posicion.up(1)
+		if (comidaActual != null)
+		game.removeVisual(comida)
 	}
 }
 
