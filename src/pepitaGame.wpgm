@@ -6,7 +6,7 @@ import wollok.game.*
 program PepitaGame {
 	
 //	CONFIG	
-	game.title("Pepita")
+	game.title("Pepita y Roque")
 	game.height(10)
 	game.width(10)
 	game.ground("suelo.png")
@@ -16,11 +16,16 @@ program PepitaGame {
 	game.addVisualIn(manzana, game.at(5,1))
 	game.addVisual(buenosAires)
 	game.addVisual(villaGesell)
-	game.addVisualCharacter(pepita)
+	game.addVisual(pepita)
+	game.addVisualCharacter(alguien)
 
 //	TECLADO
-	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
-	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
+	//keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
+	//keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
+	game.whenCollideDo(alguien,{algo =>
+		algo.teEncontro(alguien))
+		
+	}
 		
 //	START
 	game.start()

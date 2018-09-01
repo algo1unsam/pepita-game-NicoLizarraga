@@ -24,4 +24,18 @@ object pepita {
 		energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
 		self.posicion(nuevaPosicion)
 	}	
+	method teEncontro(alguien){
+		pepita.come(alpiste)
+	}
+
 }
+object alguien{
+	var posicion = game.at(2,2)
+	var comidaActual = null
+	method imagen() = "jugador.png"
+	method encontraste(comida){
+		comidaActual = comida
+		game.removeVisual(comida)posicion.up(1)
+	}
+}
+
