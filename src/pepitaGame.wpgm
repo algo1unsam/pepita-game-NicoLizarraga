@@ -1,6 +1,7 @@
 import pepita.*
 import ciudades.*
 import comidas.*
+import alguien.*
 import wollok.game.*
 
 program PepitaGame {
@@ -20,12 +21,11 @@ program PepitaGame {
 	game.addVisualCharacter(alguien)
 
 //	TECLADO
-	//keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
-	//keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
+	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
+	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
 	game.whenCollideDo(alguien,{algo =>
-		algo.teEncontro(alguien))
-		
-	}
+		algo.teEncontro(alguien)
+	})
 		
 //	START
 	game.start()
