@@ -9,7 +9,19 @@ object pepita {
 
 
 	var property posicion = game.at(3,3)
-	method imagen() = "pepita.png"
+	method imagen(){
+		
+		if( energia < 10)
+	     return "pepita.png"
+	     
+	     else if ( energia > 100)
+	     return "pepita-gorda-raw.png"
+	     
+	     else
+	     return "pepitaCanchera.png"
+		
+	}
+	
 
 	method come(comida) {
 		energia = energia + comida.energia()
